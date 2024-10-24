@@ -1,0 +1,437 @@
+@use "typegraphy" as *;
+@use "variables" as *;
+@use "mixins" as *;
+
+// all color
+
+%title-color {
+  color: $color4;
+}
+
+%p-color {
+  color: $color5;
+}
+
+%bg1 {
+  background: $color1;
+}
+
+%bg1-im {
+  background: $color1 !important;
+}
+
+%bg2 {
+  background: $color2;
+}
+
+%bg-none {
+  background: none;
+}
+
+%bg3 {
+  background: $color3;
+}
+
+%bg2-none {
+  background-image: none;
+}
+
+%bg-inherit {
+  background-size: inherit;
+}
+
+%white-color {
+  color: $white-color;
+}
+
+%white-color-im {
+  color: $white-color !important;
+}
+
+%black-color {
+  color: $black-color;
+}
+
+%bg-white {
+  background: $white-color;
+}
+
+
+%bg-black {
+  background: $black-color;
+}
+
+%bg-repeat {
+  background-repeat: no-repeat;
+}
+
+%bg-center {
+  background-position: center;
+}
+
+// Typegraphpy
+
+%font1 {
+  font-family: $font1;
+}
+
+%font2 {
+  font-family: $font2;
+}
+
+%font3 {
+  font-family: $font1;
+}
+
+%text-none {
+  text-decoration: none;
+}
+
+%text-capitalize {
+  text-transform: capitalize;
+}
+
+%text-capitalize-im {
+  text-transform: capitalize !important;
+}
+
+%text-uppercase {
+  text-transform: uppercase;
+}
+
+%text-uppercase-im {
+  text-transform: uppercase !important;
+}
+
+%text-lowercase {
+  text-transform: lowercase;
+}
+
+%text-lowercase-im {
+  text-transform: lowercase !important;
+}
+
+%text-center {
+  text-align: center;
+}
+
+%text-center-im {
+  text-align: center !important;
+}
+
+%text-right {
+  text-align: right;
+}
+
+%text-right-im {
+  text-align: right !important;
+}
+
+%text-left {
+  text-align: left;
+}
+
+%text-left-im {
+  text-align: left !important;
+}
+
+%list-none {
+  list-style: none;
+}
+
+%list-none-im {
+  list-style: none !important;
+}
+
+// hiden block 
+
+%line-0 {
+  line-height: 0;
+}
+
+%mp-0 {
+  margin: 0;
+  padding: 0;
+}
+
+%visi-hidden {
+  visibility: hidden;
+}
+
+%visi-visiable {
+  visibility: visible;
+}
+
+%opacity-0 {
+  opacity: 0;
+}
+
+%opacity-1 {
+  opacity: 1;
+}
+
+%v-o-none {
+  visibility: hidden;
+  opacity: 0;
+}
+
+%v-o-viseble {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+// all display and flex value
+
+%d-none {
+  display: none;
+}
+
+%d-none-im {
+  display: none !important;
+}
+
+%d-block {
+  display: block;
+}
+
+%d-block-im {
+  display: block !important;
+}
+
+%d-inline-block {
+  display: inline-block;
+}
+
+%d-inline-block-im {
+  display: inline-block !important;
+}
+
+%flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+%flex-im {
+  display: flex !important;
+  flex-wrap: wrap !important;
+}
+
+%justify-center {
+  justify-content: center;
+}
+
+%justify-center-im {
+  justify-content: center !important;
+}
+
+%justify-between {
+  justify-content: space-between;
+}
+
+%justify-between-im {
+  justify-content: space-between !important;
+}
+
+%justify-start {
+  justify-content: flex-start;
+}
+
+%justify-start-im {
+  justify-content: flex-start !important;
+}
+
+%align-items-center {
+  align-items: center;
+}
+
+%align-items-center-im {
+  align-items: center !important;
+}
+
+%align-items-end {
+  align-items: flex-end;
+}
+
+%justify-end {
+  justify-content: flex-end;
+}
+
+
+//border right, left, bottom, top
+%border-none {
+  border: none;
+}
+
+%border-none-im {
+  border: none !important;
+}
+
+%b-tprant {
+  border: transparent;
+}
+
+%b-tprant-im {
+  border: transparent !important;
+}
+
+%bg-tprant {
+  background: transparent;
+}
+
+%bg-tprant-im {
+  background: transparent !important;
+}
+
+%transition {
+  transition: $transition;
+}
+
+%transition2 {
+  transition: $transition2;
+}
+
+%auto {
+  margin: auto;
+}
+
+%auto-im {
+  margin: auto !important;
+}
+
+%marauto {
+  margin: 0 auto;
+}
+
+%marauto-im {
+  margin: 0 auto !important;
+}
+
+%rel,
+%p-rel {
+  position: relative;
+}
+
+%p-rel-im {
+  position: relative !important;
+}
+
+%fixed,
+%p-fixed {
+  position: fixed;
+}
+
+%p-fixed-im {
+  position: fixed !important;
+}
+
+%abs,
+%p-abs {
+  position: absolute;
+  content: "";
+}
+
+%p-abs-im {
+  position: absolute !important;
+  content: "" !important;
+}
+
+
+%hidden,
+%of-hidden {
+  overflow: hidden;
+}
+
+%of-hidden-im {
+  overflow: hidden !important;
+}
+
+%of-visiable {
+  overflow: visible;
+}
+
+%pointer {
+  cursor: pointer;
+}
+
+%pointer-im {
+  cursor: pointer !important;
+}
+
+
+%center {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+%z-index-1 {
+  z-index: 1;
+}
+
+%z-index-1-im {
+  z-index: 1 !important;
+}
+
+
+%ob-none {
+  outline: none;
+  border: none;
+}
+
+%outline-none {
+  outline: none;
+}
+
+%mb-0 {
+  margin-bottom: 0;
+}
+
+%mp-0 {
+  margin: 0;
+  padding: 0;
+}
+
+// all inherit 
+%mar-ih {
+  margin: inherit;
+}
+
+%dis-ih {
+  display: inherit;
+}
+
+%mar-ih-im {
+  margin: inherit !important;
+}
+
+%dis-ih-im {
+  display: inherit !important;
+}
+
+%width-ih {
+  width: inherit;
+}
+
+%width-ih-im {
+  width: inherit !important;
+}
+
+%height-ih {
+  height: inherit;
+}
+
+%height-ih-im {
+  height: inherit !important;
+}
+
+%position-ih {
+  position: inherit;
+}
+
+%position-ih-im {
+  position: inherit !important;
+}

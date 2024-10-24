@@ -1,0 +1,118 @@
+@use "../../utilities" as *;
+
+
+.blog {
+
+    @extend %py-100;
+
+    &__inner {
+        @extend %hidden;
+
+        .thumb {
+            @extend %hidden, %p-rel;
+            z-index: 2;
+
+            a {
+                img {
+                    @extend %wd-100, %b-radius-15;
+                }
+            }
+
+            &::before {
+                @extend %abs, %top-0, %bottom-0, %left-50, %opacity-1;
+                right: 51%;
+                background: rgba(255, 255, 255, 0.2);
+                pointer-events: none;
+            }
+
+            &::after {
+                @extend %abs, %top-50, %right-0, %bottom-50, %left-0, %opacity-1;
+                background: rgba(255, 255, 255, 0.3);
+                pointer-events: none;
+            }
+
+        }
+
+        .content {
+            @include padding(25px);
+
+            .text {
+                h4 {
+                    a {
+                        @extend %text-none, %title-color;
+                    }
+                }
+
+                ul {
+                    @extend %pl-0, %flex, %align-items-center, %my-15;
+                    gap: 20px;
+
+                    @include breakpoint(lg) {
+                        gap: 40px;
+
+                    }
+
+                    li {
+                        @extend %list-none, %p-color, %font2;
+
+                        i {
+                            @include font-size(15px);
+                            @extend %mr-10;
+                            @extend %p-color, %text-none;
+                        }
+
+                        a {
+                            @extend %text-none, %font2;
+                            color: #57595C;
+                        }
+                    }
+                }
+            }
+
+            .blogbtn {
+                @include margin-top(20px);
+
+                a {
+                    color: $color5;
+                    @extend %text-none;
+
+                    i {
+                        @extend %ml-10, %font-size-17;
+                        transform: rotate(-45deg);
+                        @include transition(.5s);
+                    }
+                }
+            }
+        }
+
+        &:hover {
+            .content {
+                .blogbtn {
+                    a {
+                        i {
+                            transform: rotate(0deg);
+                        }
+                    }
+
+                }
+
+            }
+
+            .thumb {
+                &::before {
+                    @extend %left-0, %right-0, %opacity-0;
+                    -webkit-transition: all 900ms linear;
+                    transition: all 900ms linear;
+                }
+
+                &::after {
+                    @extend %top-0, %bottom-0, %opacity-0;
+                    -webkit-transition: all 900ms linear;
+                    transition: all 900ms linear;
+                }
+            }
+        }
+
+
+    }
+}

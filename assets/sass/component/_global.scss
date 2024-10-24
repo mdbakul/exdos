@@ -1,0 +1,38 @@
+@use "../utilities" as *;
+
+
+.partner {
+
+    &__top {
+        @extend %bg1, %py-50, %mb-20;
+    }
+
+    &__bottom {
+        @extend %bg2, %py-50;
+    }
+}
+
+.slick-prev:before,
+.slick-next:before {
+    font-size: 60px;
+    color: #57595C;
+    font-weight: 700;
+}
+
+.slick-prev {
+    left: -80px;
+
+}
+
+.slick-next {
+    right: -35px;
+}
+
+.slick-slider {
+    margin: 0 -15px;
+}
+
+.slick-slide {
+    margin-right: 15px;
+    margin-left: 15px;
+}

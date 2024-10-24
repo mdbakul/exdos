@@ -1,0 +1,63 @@
+@use "../../utilities" as *;
+
+
+.contact {
+    @extend %py-100, %bg3;
+
+    &__leftheading {
+        h2 {
+            @extend %font-size-100;
+        }
+    }
+
+    &__form {
+
+        form {
+            @extend %mt-30;
+
+            .inputbox {
+                @extend %rel;
+
+                input {
+                    @extend %rel, %wd-100, %bg-tprant, %outline-none, %border-none, %transition2;
+                    color: $color5;
+                    padding: 20px 10px 10px;
+                    box-shadow: none;
+                    letter-spacing: 0.05em;
+                    z-index: 10;
+
+                    &:valid~span,
+                    &:focus~span {
+                        @extend %p-color;
+                        transform: translateX(-10px) translateY(-34px);
+                        font-size: 0, 75em;
+                    }
+
+                    &:valid~i,
+                    &:focus~i {
+                        height: 44px;
+                    }
+                }
+
+                span {
+                    @extend %abs, %left-0, %bottom-5, %font-size-15, %transition2;
+                    padding: 20px 10px 10px;
+                    color: $color5;
+                    letter-spacing: 00.05em;
+                    pointer-events: none;
+                }
+
+                i {
+                    @extend %abs, %left-0, %bottom-0, %wd-100, %bg1, %h-1, %transition2;
+                    pointer-events: none;
+                    z-index: 9;
+                }
+            }
+        }
+    }
+
+    &__btn {
+        @extend %mt-50;
+    }
+
+}

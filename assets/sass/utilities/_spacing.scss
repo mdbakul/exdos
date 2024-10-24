@@ -1,0 +1,557 @@
+@use 'rfs' as *;
+
+/*--
+    - all Margin 
+-----------------------------------------*/
+
+@for $i from 0 through 500 {
+    %mt-#{1 * $i} {
+        @if $i <=30 {
+            margin-top: 1px *$i
+        }
+
+        @else {
+            @include margin-top(1px *$i);
+        }
+    }
+}
+
+@for $i from 0 through 500 {
+    %mt-im-#{1 * $i} {
+
+        @if $i <=30 {
+            margin-top: 1px *$i !important;
+        }
+
+        @else {
+            @include margin-top(1px *$i !important);
+        }
+    }
+}
+
+@for $i from 0 through 500 {
+    %mb-#{1 * $i} {
+
+        @if $i <=30 {
+            margin-bottom: 1px *$i;
+        }
+
+        @else {
+            @include margin-bottom(1px *$i);
+        }
+    }
+}
+
+@for $i from 0 through 500 {
+    %mb-im-#{1 * $i} {
+        @if $i <=30 {
+            margin-bottom: 1px *$i !important;
+        }
+
+        @else {
+            @include margin-bottom(1px *$i !important);
+        }
+    }
+}
+
+
+@for $i from 0 through 500 {
+    %ml-#{1 * $i} {
+        @if $i <=30 {
+            margin-left: 1px *$i;
+        }
+
+        @else {
+            @include margin-left(1px *$i);
+        }
+    }
+}
+
+@for $i from 0 through 500 {
+    %ml-im-#{1 * $i} {
+        @if $i <=30 {
+            margin-left: 1px *$i !important;
+        }
+
+        @else {
+            @include margin-left(1px *$i !important);
+        }
+    }
+}
+
+@for $i from 0 through 500 {
+    %mr-#{1 * $i} {
+        @if $i <=30 {
+            margin-right: 1px *$i;
+        }
+
+        @else {
+            @include margin-right(1px *$i);
+        }
+    }
+}
+
+@for $i from 0 through 500 {
+    %mr-im-#{1 * $i} {
+        @if $i <=30 {
+            margin-right: 1px *$i !important;
+        }
+
+        @else {
+            @include margin-right(1px *$i !important);
+        }
+    }
+}
+
+@for $i from 0 through 500 {
+    %m-#{1 * $i} {
+        @if $i <=30 {
+            margin: 1px *$i;
+        }
+
+        @else {
+            @include margin(1px *$i);
+        }
+    }
+}
+
+@for $i from 0 through 500 {
+    %m-im-#{1 * $i} {
+        @if $i <=30 {
+            margin: 1px *$i !important;
+        }
+
+        @else {
+            @include margin(1px *$i !important);
+        }
+    }
+}
+
+
+@for $i from 0 through 100 {
+    %my-#{1 * $i} {
+        margin-block: 1px *$i;
+    }
+}
+
+@for $i from 0 through 100 {
+    %my-im-#{1 * $i} {
+        margin-block: 1px *$i !important;
+    }
+}
+
+@for $i from 0 through 100 {
+    %mx-#{1 * $i} {
+        margin-inline: 1px *$i;
+    }
+}
+
+@for $i from 0 through 100 {
+    %mx-im-#{1 * $i} {
+        margin-inline: 1px *$i !important;
+    }
+}
+
+/*--
+    -all Padding 
+-----------------------------------------*/
+@for $i from 0 through 500 {
+    %pt-#{1 * $i} {
+        @if $i <=30 {
+            padding-top: 1px *$i;
+        }
+
+        @else {
+            @include padding-top(1px *$i);
+        }
+    }
+}
+
+@for $i from 0 through 500 {
+    %pt-im-#{1 * $i} {
+        @if $i <=30 {
+            padding-top: 1px *$i !important;
+        }
+
+        @else {
+            @include padding-top(1px *$i !important);
+        }
+    }
+}
+
+@for $i from 0 through 500 {
+    %pb-#{1 * $i} {
+
+        @if $i <=30 {
+            padding-bottom: 1px *$i;
+        }
+
+        @else {
+            @include padding-bottom(1px *$i);
+        }
+    }
+}
+
+@for $i from 0 through 500 {
+    %pb-im-#{1 * $i} {
+        @if $i <=30 {
+            padding-bottom: 1px *$i !important;
+        }
+
+        @else {
+            @include padding-bottom(1px *$i !important);
+        }
+    }
+}
+
+@for $i from 0 through 500 {
+    %pl-#{1 * $i} {
+        @if $i <=30 {
+            padding-left: 1px *$i;
+        }
+
+        @else {
+            @include padding-left(1px *$i);
+        }
+    }
+}
+
+@for $i from 0 through 500 {
+    %pl-im-#{1 * $i} {
+        @if $i <=30 {
+            padding-left: 1px *$i !important;
+        }
+
+        @else {
+            @include padding-left(1px *$i !important);
+        }
+    }
+}
+
+@for $i from 0 through 500 {
+    %pr-#{1 * $i} {
+        @if $i <=30 {
+            padding-right: 1px *$i;
+        }
+
+        @else {
+            @include padding-right(1px *$i);
+        }
+    }
+}
+
+@for $i from 0 through 500 {
+    %pr-im-#{1 * $i} {
+        @if $i <=30 {
+            padding-right: 1px *$i !important;
+        }
+
+        @else {
+            @include padding-right(1px *$i !important);
+        }
+    }
+}
+
+@for $i from 0 through 1000 {
+    %py-#{1 * $i} {
+        padding-block: 1px *$i;
+    }
+}
+
+@for $i from 0 through 1000 {
+    %py-im-#{1 * $i} {
+        padding-block: 1px *$i !important;
+    }
+}
+
+@for $i from 0 through 1000 {
+    %px-#{1 * $i} {
+        padding-inline: 1px *$i;
+    }
+}
+
+@for $i from 0 through 1000 {
+    %px-im-#{1 * $i} {
+        padding-inline: 1px *$i !important;
+    }
+}
+
+@for $i from 0 through 200 {
+    %p-#{1 * $i} {
+
+        @if $i <=30 {
+            padding: 1px *$i;
+        }
+
+        @else {
+            @include padding(1px *$i);
+        }
+    }
+}
+
+@for $i from 0 through 200 {
+    %p-im-#{1 * $i} {
+
+        @if $i <=30 {
+            padding: 1px *$i !important;
+        }
+
+        @else {
+            @include padding(1px *$i !important);
+        }
+    }
+}
+
+/*--
+    - wdith, height and line height
+-----------------------------------------*/
+
+/*-- width with pixel and %--*/
+@for $i from 0 through 1000 {
+    %w-#{1 * $i} {
+        width: 1px *$i;
+    }
+}
+
+@for $i from 0 through 1000 {
+    %w-im-#{1 * $i} {
+        width: 1px *$i !important;
+    }
+}
+
+@for $i from 0 through 100 {
+    %wd-#{1 * $i} {
+        width: 1% *$i;
+    }
+}
+
+@for $i from 0 through 100 {
+    %wd-im-#{1 * $i} {
+        width: 1% *$i !important;
+    }
+}
+
+
+/*--height  with pixel and %--*/
+@for $i from 0 through 1000 {
+    %h-#{1 * $i} {
+        height: 1px *$i;
+    }
+}
+
+@for $i from 0 through 1000 {
+    %h-im-#{1 * $i} {
+        height: 1px *$i !important;
+    }
+}
+
+@for $i from 0 through 1000 {
+    %hd-#{1 * $i} {
+        height: 1% *$i;
+    }
+}
+
+@for $i from 0 through 100 {
+    %hd-im-#{1 * $i} {
+        height: 1% *$i !important;
+    }
+}
+
+/*--line height with pixel--*/
+@for $i from 0 through 500 {
+    %lheight-#{1 * $i} {
+        line-height: 1px *$i;
+    }
+}
+
+@for $i from 0 through 500 {
+    %lhight-im-#{1 * $i} {
+        line-height: 1px *$i !important;
+    }
+}
+
+
+/*--
+    - font-size 
+-----------------------------------------*/
+@for $i from 1 through 500 {
+    %font-size-#{1 * $i} {
+        @if $i <=20 {
+            font-size: 1px *$i;
+        }
+
+        @else {
+            @include font-size(1px *$i);
+        }
+    }
+}
+
+/*--
+    - text 
+-----------------------------------------*/
+@for $i from 300 through 900 {
+    %text-#{1 * $i} {
+        font-weight: (1 * $i);
+    }
+}
+
+
+
+/*--
+    - from top, left, bottom, right with %  
+-----------------------------------------*/
+@for $i from 0 through 100 {
+    %top-#{1 * $i} {
+        top: 1% *$i;
+    }
+}
+
+@for $i from 0 through 100 {
+    %top-im-#{1 * $i} {
+        top: 1% *$i !important;
+    }
+}
+
+@for $i from 0 through 100 {
+    %left-#{1 * $i} {
+        left: (1% *$i);
+    }
+}
+
+@for $i from 0 through 100 {
+    %left-im-#{1 * $i} {
+        left: 1% *$i !important;
+    }
+}
+
+@for $i from 0 through 100 {
+    %right-#{1 * $i} {
+        right: (1% *$i);
+    }
+}
+
+@for $i from 0 through 100 {
+    %right-im-#{1 * $i} {
+        right: 1% *$i !important;
+    }
+}
+
+@for $i from 0 through 100 {
+    %bottom-#{1 * $i} {
+        bottom: (1% *$i);
+    }
+}
+
+@for $i from 0 through 100 {
+    %bottom-im-#{1 * $i} {
+        bottom: 1% *$i !important;
+    }
+}
+
+/*--
+    - from top, left, bottom, right with pixel  
+-----------------------------------------*/
+
+@for $i from 0 through 1000 {
+    %p-top-#{1 * $i} {
+        top: (1px *$i);
+    }
+}
+
+@for $i from 0 through 1000 {
+    %p-top-im-#{1 * $i} {
+        top: 1px *$i !important;
+    }
+}
+
+@for $i from 0 through 1000 {
+    %p-left-#{1 * $i} {
+        left: (1px *$i);
+    }
+}
+
+@for $i from 0 through 1000 {
+    %p-left-im-#{1 * $i} {
+        left: 1px *$i !important;
+    }
+}
+
+@for $i from 0 through 1000 {
+    %p-right-#{1 * $i} {
+        right: (1px *$i);
+    }
+}
+
+@for $i from 0 through 1000 {
+    %p-right-im-#{1 * $i} {
+        right: 1px *$i !important;
+    }
+}
+
+@for $i from 0 through 1000 {
+    %p-bottom-#{1 * $i} {
+        bottom: (1px *$i);
+    }
+}
+
+@for $i from 0 through 1000 {
+    %p-bottom-im-#{1 * $i} {
+        bottom: 1px *$i !important;
+    }
+}
+
+
+/*--
+    -border 1 to 5   
+-----------------------------------------*/
+
+@for $i from 1 through 5 {
+    %border-#{1 * $i} {
+        border: (1px *$i) + solid #fff;
+    }
+}
+
+@for $i from 1 through 100 {
+    %b-radius-#{1 * $i} {
+        border-radius: (1px *$i);
+    }
+}
+
+@for $i from 1 through 100 {
+    %b-radius-im-#{1 * $i} {
+        border-radius: 1px *$i !important;
+    }
+}
+
+/*--
+    -outline 1 to 5  
+-----------------------------------------*/
+
+@for $i from 1 through 5 {
+    %outline-#{1 * $i} {
+        outline: (1px *$i) + solid #000;
+    }
+}
+
+@for $i from 1 through 5 {
+    %outline-im-#{1 * $i} {
+        outline: (1px *$i) + solid #000 !important;
+    }
+}
+
+/*--
+    -gap 0 to 100
+-----------------------------------------*/
+
+@for $i from 0 through 100 {
+    %gap-#{1 * $i} {
+        gap: 1px *$i;
+    }
+}
+
+
+@for $i from 0 through 100 {
+    %z-index-#{1 * $i} {
+        z-index: 1px *$i;
+    }
+}

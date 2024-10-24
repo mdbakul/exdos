@@ -1,0 +1,399 @@
+@use "../../utilities" as *;
+
+// header nav here
+
+.header {
+    @extend %abs, %top-0, %left-0, %wd-100, %z-index-1;
+
+    &::after {
+        @extend %abs, %p-top-100, %p-left-0, %wd-100, %h-2;
+        background: #FFF;
+        opacity: 0.15;
+    }
+
+    &__content {
+        @extend %flex, %align-items-center;
+    }
+
+    &__menu {
+        @include breakpoint(xl) {
+            width: calc(100% - 450px);
+        }
+
+        @include breakpoint(xxxxxl) {
+            padding-left: 80px;
+        }
+
+        nav {
+            >ul {
+                @extend %align-items-center, %mb-0, %mp-0;
+
+                @include breakpoint(xl) {
+                    display: flex;
+                }
+
+                li {
+                    @extend %list-none, %p-rel;
+
+                    @include breakpoint(max-xl) {
+                        @include padding(5px 0px);
+                        width: 100%;
+                    }
+
+                    a {
+                        @extend %text-none, %black-color, %font-size-19, %text-capitalize;
+
+                        @include breakpoint(xl) {
+                            @include padding(35px 18px);
+                            color: #fff;
+                        }
+
+                        @include breakpoint(max-xl) {
+                            width: 100%;
+                            display: inline-block;
+                        }
+
+                    }
+
+                    ul {
+                        @extend %pl-10, %w-150;
+                        padding-left: 0;
+                        top: 64px;
+                        @include transition(.5s);
+
+                        @include breakpoint(xl) {
+                            position: absolute;
+                            opacity: 0;
+                            visibility: hidden;
+                            background: #fff;
+                            left: 30%;
+                        }
+
+                        @include breakpoint(max-xl) {
+                            display: none;
+                        }
+
+                        li {
+                            @extend %py-0;
+
+                            a {
+                                @extend %px-10, %black-color, %d-inline-block, %py-im-8, %wd-100;
+
+                                @include breakpoint(max-xl) {
+                                    color: #000;
+                                }
+                            }
+                        }
+                    }
+
+                    &:hover {
+                        ul {
+                            left: 0;
+
+                            @include breakpoint(xl) {
+                                visibility: visible;
+                                opacity: 1;
+                            }
+                        }
+
+                    }
+
+                }
+            }
+        }
+
+        &--mobilebg {
+            @include breakpoint(max-lg) {
+                // background: #fff;
+                // box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+            }
+        }
+    }
+
+    &__logo {
+        @extend %pl-10;
+
+        @include breakpoint(md) {
+            width: 350px;
+            padding-left: 100px;
+        }
+
+    }
+
+    &__numbersearh {
+
+        @extend %flex, %align-items-center, %gap-50, %pr-60;
+        justify-content: flex-end;
+
+        @include breakpoint(xxxxxxl) {
+            gap: 70px;
+        }
+
+        .searchbar {
+            @extend %rel;
+
+            @include breakpoint(max-xxxxxl) {
+                display: none;
+            }
+
+            // a {
+            //     img {}
+            // }
+
+            &::after {
+                @extend %abs, %w-2;
+
+                @include breakpoint(xxxxxl) {
+                    background: #FFF;
+                    opacity: 0.15;
+                    height: 100px;
+                    top: -36px;
+                    left: 60px;
+                }
+            }
+        }
+
+        .number {
+            @extend %flex, %align-items-center, %gap-20;
+
+            @include breakpoint(max-xxxxl) {
+                display: none;
+            }
+
+            .icon {
+                img {}
+            }
+
+            .text {
+                p {
+                    @extend %white-color, %font-size-15;
+                }
+
+                h6 {
+                    a {
+                        @extend %white-color, %text-none;
+                    }
+                }
+            }
+        }
+
+    }
+
+    &__sidebar {
+        @extend %w-100;
+        margin-left: auto;
+
+        .offcanvasicon {
+            @extend %w-100, %h-100, %lheight-100, %text-center;
+            @extend %pointer, %text-center;
+            background: #23252D;
+
+            i {
+                @extend %white-color, %pointer;
+                @include font-size(20px);
+            }
+        }
+
+    }
+}
+
+.tpoffcanvas {
+    @extend %p-top-0, %p-bottom-0, %v-o-none, %wd-100, %bg-white, %p-20;
+    position: fixed;
+    right: -100%;
+    z-index: 999999;
+    scrollbar-width: none;
+    transition: 1s ease-in-out;
+    overflow-y: scroll;
+
+    @include breakpoint(lg) {
+        width: 450px;
+    }
+
+    &.opened {
+        @extend %p-right-0;
+        -webkit-transition: all .6s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+        -moz-transition: all .6s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+        transition: all .6s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+        transition-duration: 1s;
+    }
+
+    &.opened {
+        @extend %v-o-viseble;
+    }
+
+    &__logo {
+        @extend %py-20;
+
+        a {
+            h5 {
+                @extend %white-color;
+            }
+        }
+    }
+
+    &__close-btn {
+        margin-left: auto;
+        @extend %w-50, %h-50, %lheight-50, %text-center, %bg1;
+
+        button {
+            @extend %bg-none, %border-none;
+
+            i {
+                @include font-size(20px);
+                @extend %black-color;
+            }
+        }
+    }
+
+    &__header {
+        @extend %bg-white;
+    }
+
+    &__content {
+        @extend %mt-50;
+
+        h3 {
+            @extend %black-color, %text-700;
+        }
+
+        p {
+            @extend %my-10, %font-size-17;
+        }
+
+        .allimg {
+            @extend %flex, %gap-5, %mt-30;
+
+            a {
+                img {
+                    @extend %w-75, %h-78;
+                }
+            }
+        }
+
+        .contactinfo {
+            @extend %mt-40;
+
+            h5 {
+                @extend %mb-10;
+            }
+
+            ul {
+                @extend %mp-0;
+
+                li {
+                    @extend %list-none, %mb-8;
+
+                    a {
+                        @extend %text-none, %p-color;
+                    }
+
+                    &:last-child {
+                        @extend %mb-0;
+                    }
+                }
+            }
+        }
+
+        .social {
+            @extend %mt-40;
+
+            h5 {
+                @extend %mb-10;
+            }
+
+            ul {
+                @extend %flex, %gap-10, %mp-0;
+
+                li {
+                    @extend %list-none;
+
+                    a {
+                        width: 40px;
+                        height: 40px;
+                        line-height: 40px;
+                        @extend %text-center, %b-radius-20, %d-inline-block;
+                        border: 1px solid rgba(2, 11, 24, 0.1);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.menu-item-has-children {
+    >a {
+        @extend %rel;
+
+        &::after {
+            @extend %abs, %bg2, %top-50, %w-10;
+            transform: translateY(-50%);
+            right: 272px;
+            height: 2px;
+            @include transition($transition2);
+        }
+
+        &::before {
+            @extend %abs, %bg2, %h-10;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 276px;
+            width: 2px;
+            @include transition($transition2);
+        }
+
+        @include breakpoint(xl) {
+            &::after {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 1px;
+                width: 10px;
+                height: 2px;
+                background: $color1;
+            }
+
+            &::before {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 5px;
+                width: 2px;
+                height: 10px;
+                background: $color1;
+            }
+        }
+    }
+
+    &:hover {
+        >a {
+            &:before {
+                @include breakpoint(xl) {
+                    transform: translate(-50%, -50%) rotate(90deg);
+                    opacity: 0;
+                }
+            }
+
+            &::after {
+                background: $color1;
+            }
+        }
+    }
+
+    &.open {
+        >a {
+
+            &::after,
+            &::before {
+                @extend %p-color;
+            }
+
+            &:before {
+                @include breakpoint(max-xl) {
+                    transform: translate(-50%, -50%) rotate(90deg);
+                    opacity: 0;
+                }
+            }
+        }
+    }
+}

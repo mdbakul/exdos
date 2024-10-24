@@ -1,0 +1,110 @@
+@use "../../utilities" as *;
+
+
+.newslatter {
+    @extend %wd-100;
+
+    @include breakpoint(xl) {
+        position: absolute;
+        margin-top: -100px;
+    }
+
+    &__bg {
+        @extend %bg2, %py-70, %b-radius-20, %px-40, %rel;
+
+        @include breakpoint(xl) {
+            padding-inline: 76px;
+        }
+
+    }
+
+    &__content {
+        h2 {
+            @extend %white-color;
+            font-size: 60px;
+
+            @include breakpoint(max-xl) {
+                text-align: center;
+                margin-bottom: 30px;
+            }
+
+        }
+    }
+
+    &__form {
+        @extend %rel;
+
+        h3 {
+            @extend %d-none, %font-size-100;
+
+            @include breakpoint(sm) {
+                position: absolute;
+                opacity: 0.1;
+                color: #fff;
+                left: 10%;
+                top: 46%;
+                display: block;
+            }
+
+            @include breakpoint(xl) {
+                left: 40%;
+                top: 27%;
+            }
+
+        }
+
+        form {
+            input {
+                @extend %font-size-18, %d-block, %border-none, %wd-100, %font2;
+                padding: 25px 10px 15px 5px;
+                border-bottom: 1px solid #fff;
+                background: transparent;
+
+                @include breakpoint(sm) {
+                    position: absolute;
+                    z-index: 1;
+                    width: 80%;
+                }
+
+                @include breakpoint(lg) {
+                    width: 570px;
+
+
+                }
+
+                &:focus {
+                    @extend %outline-none;
+                }
+
+                &:focus~label .label-char,
+                &:valid~label .label-char {
+                    transform: translateY(-20px);
+                    @extend %white-color, %font-size-20;
+                }
+            }
+
+            label {
+                @extend %white-color, %font-size-20, %flex, %font2;
+                pointer-events: none;
+
+                @include breakpoint(sm) {
+                    position: absolute;
+                    left: 4%;
+                    top: 67%;
+
+                }
+
+                @include breakpoint(xl) {
+                    left: 9%;
+                    top: 45%;
+
+                }
+
+                span {
+                    transition: 0.2s ease all;
+                    transition-delay: calc(var(--index) * .06s);
+                }
+            }
+        }
+    }
+}

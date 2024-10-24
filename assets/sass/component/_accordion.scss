@@ -1,0 +1,32 @@
+@use "../utilities" as *;
+
+//projects tabs start here
+
+//projects tabs end here
+
+
+.projects {
+    &__nav {
+        button {
+            @extend %bg-none, %border-none, %pl-100;
+            border-bottom: 1px solid #2F446B;
+
+            h2 {
+                @extend %white-color, %font-size-100, %text-400, %font1, %text-left;
+            }
+
+            &.active {
+                border-bottom: 1px solid #FFE815;
+
+                h2 {
+                    color: $color1;
+
+                }
+            }
+        }
+    }
+
+    &__tab-content {
+        margin-left: auto;
+    }
+}

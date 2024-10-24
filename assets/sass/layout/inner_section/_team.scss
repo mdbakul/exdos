@@ -1,0 +1,57 @@
+@use "../../utilities" as *;
+
+.team {
+    @extend %py-100;
+
+    &__tile {
+        @extend %text-left, %mb-30;
+
+        h2 {
+            @extend %text-left;
+        }
+    }
+
+    &__item {
+        .thumb {
+            img {
+                @extend %b-radius-15, %wd-100;
+            }
+        }
+
+        .text {
+            @extend %mt-30, %text-center;
+
+            p {
+                @extend %flex, %align-items-center, %py-15, %pl-15;
+
+                span {
+                    @extend %w-60, %h-1, %mr-10, %d-inline-block;
+                    background: #D6D6D1;
+                }
+            }
+
+            .social-icon {
+                a {
+                    @extend %mr-10;
+
+                    i {
+                        @extend %font-size-25, %title-color;
+                    }
+
+                    &:last-child {
+                        @extend %mr-0;
+                    }
+
+                    &:hover {
+                        i {
+                            color: $color2;
+                        }
+                    }
+                }
+            }
+
+        }
+
+    }
+
+}

@@ -1,0 +1,275 @@
+@use "../utilities" as *;
+
+
+// button 1
+
+.bt {
+    @extend %border-none, %font-size-18, %text-capitalize, %bg1, %black-color, %text-center, %b-radius-5, %mt-30, %rel;
+    @include padding(15px 30px);
+    user-select: none;
+    transition: all 0.2s ease;
+}
+
+.msg {
+    @extend %h-0, %w-0, %b-radius-2, %abs, %left-15, %top-25;
+}
+
+.bt:active {
+    transition: all 0.001s ease;
+    background-color: #5d9fcd;
+    box-shadow: #97989a 0 0 0 0;
+    transform: translateX(1px) translateY(1px);
+}
+
+.bt:hover .msg {
+    animation: msgRun 2s forwards;
+}
+
+@keyframes msgRun {
+    0% {
+        border-top: #d6d6d9 0 solid;
+        border-bottom: #f2f2f5 0 solid;
+        border-left: #f2f2f5 0 solid;
+        border-right: #f2f2f5 0 solid;
+    }
+
+    20% {
+        border-top: #d6d6d9 14px solid;
+        border-bottom: #f2f2f5 14px solid;
+        border-left: #f2f2f5 20px solid;
+        border-right: #f2f2f5 20px solid;
+    }
+
+    25% {
+        border-top: #d6d6d9 12px solid;
+        border-bottom: #f2f2f5 12px solid;
+        border-left: #f2f2f5 18px solid;
+        border-right: #f2f2f5 18px solid;
+    }
+
+    80% {
+        border-top: transparent 12px solid;
+        border-bottom: transparent 12px solid;
+        border-left: transparent 18px solid;
+        border-right: transparent 18px solid;
+    }
+
+    100% {
+        transform: translateX(150px);
+        border-top: transparent 12px solid;
+        border-bottom: transparent 12px solid;
+        border-left: transparent 18px solid;
+        border-right: transparent 18px solid;
+    }
+}
+
+// button 2
+.custom-btn {
+    @extend %w-200, %h-70, %flex, %b-radius-5, %align-items-center, %justify-center, %rel, %gap-10, %text-none, %bg1;
+    align-content: center;
+    z-index: 9;
+    border: 1px solid #FFE815;
+}
+
+.custom-btn::after {
+    @extend %wd-100, %hd-100, %p-top-0, %p-left-0, %bg-white, %opacity-0;
+    content: "";
+    position: absolute;
+    -webkit-clip-path: polygon(0 0, 100% 0, 0 0, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 0 0, 0 100%);
+    z-index: -1;
+}
+
+.custom-btn span {
+    @extend %title-color, %text-400, %text-capitalize, %font-size-18;
+}
+
+.custom-btn:hover::after {
+    animation: sideClip 0.5s linear;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    @extend %opacity-1;
+}
+
+.custom-btn:hover span {
+    animation: storm 0.4s linear both;
+}
+
+@keyframes sideClip {
+    0% {
+        clip-path: polygon(0 0, 100% 0, 0 0, 0 100%);
+    }
+
+    50% {
+        clip-path: polygon(0 0, 100% 0, 0 100%, 0 100%);
+    }
+
+    100% {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+}
+
+@keyframes storm {
+    0% {
+        transform: translate3d(0, 0, 0) translateZ(0);
+    }
+
+    25% {
+        transform: translate3d(4px, 0, 0) translateZ(0);
+    }
+
+    50% {
+        transform: translate3d(-3px, 0, 0) translateZ(0);
+    }
+
+    75% {
+        transform: translate3d(2px, 0, 0) translateZ(0);
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0) translateZ(0);
+    }
+}
+
+// end here
+
+.button {
+    position: relative;
+    padding: 10px 22px;
+    border-radius: 6px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    background-color: #7d2ae8;
+    transition: all 0.2s ease;
+}
+
+.button:active {
+    transform: scale(0.96);
+}
+
+.button:before,
+.button:after {
+    position: absolute;
+    content: "";
+    width: 150%;
+    left: 50%;
+    height: 100%;
+    transform: translateX(-50%);
+    z-index: -1000;
+    background-repeat: no-repeat;
+}
+
+.button:hover:before {
+    top: -70%;
+    background-image: radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, transparent 20%, #7d2ae8 20%, transparent 30%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, transparent 10%, #7d2ae8 15%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%);
+    background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%,
+        10% 10%, 18% 18%;
+    background-position: 50% 120%;
+    animation: greentopBubbles 0.6s ease;
+}
+
+@keyframes greentopBubbles {
+    0% {
+        background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%,
+            40% 90%, 55% 90%, 70% 90%;
+    }
+
+    50% {
+        background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%,
+            50% 50%, 65% 20%, 90% 30%;
+    }
+
+    100% {
+        background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%,
+            50% 40%, 65% 10%, 90% 20%;
+        background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+    }
+}
+
+.button:hover::after {
+    bottom: -70%;
+    background-image: radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, transparent 10%, #7d2ae8 15%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%);
+    background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 20% 20%, 18% 18%;
+    background-position: 50% 0%;
+    animation: greenbottomBubbles 0.6s ease;
+}
+
+@keyframes greenbottomBubbles {
+    0% {
+        background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%,
+            70% -10%, 70% 0%;
+    }
+
+    50% {
+        background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%,
+            105% 0%;
+    }
+
+    100% {
+        background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%,
+            110% 10%;
+        background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+    }
+}
+
+// end here
+
+// start play btn 
+.playbtn_animation {
+    @extend %rel, %flex, %align-items-center, %justify-center;
+    z-index: 1;
+
+    a {
+        @extend %w-50, %h-50, %b-radius-25, %bg1, %lheight-50, %text-center;
+
+        i {
+            @extend %black-color;
+        }
+    }
+}
+
+.playbtn_animation::before,
+.playbtn_animation::after {
+    position: absolute;
+    content: "";
+    height: 8em;
+    width: 8em;
+    border: .5em solid #FFE815;
+    border-radius: 50%;
+    animation: playbtn_animation_79178 2.5s linear infinite;
+    z-index: -1;
+}
+
+.playbtn_animation::after {
+    opacity: 0;
+    animation-delay: 1.2s;
+}
+
+@keyframes playbtn_animation_79178 {
+    0% {
+        border: .5em solid #FFE815;
+        transform: scale(0);
+        opacity: 1;
+    }
+
+    100% {
+        border: 0 solid #FFE815;
+        transform: scale(1);
+        opacity: 0;
+    }
+}

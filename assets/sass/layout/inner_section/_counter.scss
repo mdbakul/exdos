@@ -1,0 +1,28 @@
+@use "../../utilities" as *;
+
+.counter {
+    @extend %py-100;
+
+    &__inner {
+        .thumb {
+            svg {}
+        }
+    }
+
+    &__content {
+        .maincounter {
+            h5 {
+                @extend %white-color, %mp-0;
+
+                span {
+                    @extend %font-size-60, %pt-2, %pb-5;
+                }
+            }
+        }
+
+        h4 {
+            @extend %white-color, %py-15;
+            opacity: 0.5;
+        }
+    }
+}

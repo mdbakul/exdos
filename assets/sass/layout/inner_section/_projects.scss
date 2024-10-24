@@ -1,0 +1,9 @@
+@use "../../utilities" as *;
+
+
+.projects {
+    @include padding(120px 60px 120px 0);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

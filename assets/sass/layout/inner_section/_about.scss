@@ -1,0 +1,57 @@
+@use "../../utilities" as *;
+
+.about {
+    @extend %pt-130, %pb-200, %bg-repeat;
+
+    &__inner {
+        .thumb {
+            img {
+                @extend %b-radius-10, %wd-100;
+            }
+        }
+
+        .text {
+            @extend %mt-100;
+
+            .playbtn {
+                @extend %flex, %align-items-center, %gap-30;
+
+                h4 {
+                    color: #57595C;
+                }
+            }
+
+            h2 {
+                @extend %font-size-60, %mt-40;
+
+                @include breakpoint(lg) {
+                    line-height: 70px;
+                }
+            }
+        }
+
+        &--rightstyle {
+            .text {
+                @extend %mt-im-0;
+
+                h2 {
+                    @extend %mt-im-0, %mb-30;
+                }
+
+                p {
+                    @extend %mb-30, %font-size-18, %font2, %lheight-28;
+                    color: #57595C;
+
+                    span {
+                        @extend %title-color, %text-500;
+                    }
+                }
+            }
+
+            .thumb {
+                @extend %mt-70;
+            }
+        }
+    }
+
+}

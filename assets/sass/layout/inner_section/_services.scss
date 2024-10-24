@@ -1,0 +1,92 @@
+@use "../../utilities" as *;
+
+.service {
+    @extend %py-150;
+
+    &__wrapper {
+        @extend %mt-40;
+    }
+
+    &__inner {
+        @extend %b-radius-20, %py-50, %px-35, %rel;
+        border: 1px solid #57595C;
+        z-index: 1;
+
+        .thumb {
+            @extend %mb-20;
+        }
+
+        .text {
+
+            p {
+                @extend %py-20, %text-capitalize, %font-size-17, %p-color;
+            }
+
+            ul {
+                @extend %mp-0, %pl-10;
+
+                li {
+                    @extend %mb-13, %font-size-17, %p-color;
+
+                    &:last-child {
+                        @extend %mb-0;
+                    }
+
+                }
+            }
+
+            .service_btn {
+                @extend %mt-30;
+
+                button {
+                    @extend %bg3, %title-color, %wd-100, %rel, %pointer, %hidden, %align-items-center, %flex, %font1, %b-radius-5, %font-size-18, %text-400, %border-none;
+                    @extend %pl-15;
+                    height: 2.8em;
+
+                    .icon {
+                        @extend %abs, %flex, %align-items-center, %justify-center;
+                        margin-left: 1em;
+                        height: 2.2em;
+                        width: 2.2em;
+                        right: 0.3em;
+                        transition: all 1s;
+
+                        svg {
+                            @extend %title-color;
+                            width: 1.1em;
+                            transition: transform 0.3s;
+                            transform: rotate(-45deg);
+                        }
+                    }
+
+                    &:active {
+                        transform: scale(0.95);
+                    }
+                }
+            }
+        }
+
+        &:hover {
+            .service_btn {
+                button {
+                    @extend %bg2;
+
+                    .icon {
+                        width: calc(100% - 0.6em);
+                        @extend %bg2, %b-radius-5;
+                        transition: all 0.5s;
+
+                        svg {
+                            transform: translateX(0.1em);
+                            color: #fff !important;
+                        }
+                    }
+                }
+            }
+        }
+
+        &:hover {
+            @extend %bg3;
+        }
+    }
+}

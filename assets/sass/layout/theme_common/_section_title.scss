@@ -1,0 +1,19 @@
+@use "../../utilities" as *;
+
+.section {
+    &__title {
+        @extend %text-center;
+
+        h2 {
+            @extend %text-400;
+            @extend %border-4, %my-13, %font-size-60, %title-color, %text-center;
+
+        }
+
+        p {
+            @extend %text-400, %font2, %font-size-17, %text-center;
+            color: #57595C;
+        }
+
+    }
+}

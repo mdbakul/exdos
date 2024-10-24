@@ -1,0 +1,57 @@
+@use "../../utilities" as *;
+
+.hero {
+    width: 100%;
+    @include padding(220px 0);
+
+    &__content {
+        @include breakpoint(max-sm) {
+            margin-top: 30px;
+        }
+
+        h2 {
+            @extend %white-color, %font-size-70, %text-uppercase;
+
+            @include breakpoint(xxl) {
+                font-size: 110px;
+            }
+
+            span {
+                background: linear-gradient(to bottom right, rgba(255, 232, 21, 0.95) 0%, #3C7FFF 50%) bottom right / 50% 50% no-repeat, linear-gradient(to bottom left, rgba(255, 232, 21, 0.95) 0%, #3C7FFF 50%) bottom left / 50% 50% no-repeat, linear-gradient(to top left, rgba(255, 232, 21, 0.95) 0%, #3C7FFF 50%) top left / 50% 50% no-repeat, linear-gradient(to top right, rgba(255, 232, 21, 0.95) 0%, #3C7FFF 50%) top right / 50% 50% no-repeat;
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                @extend %font-size-70;
+
+                @include breakpoint(xxl) {
+                    font-size: 110px;
+                }
+            }
+        }
+
+        .bottom-text {
+            @extend %flex, %align-items-center, %gap-10;
+
+            @include breakpoint(lg) {
+                gap: 35px;
+            }
+
+            span {
+                @extend %font-size-30, %text-uppercase, %white-color, %lheight-40;
+                color: #B1B4BA;
+            }
+
+            h3 {
+                @extend %white-color, %font-size-60, %text-uppercase;
+
+                @include breakpoint(xxl) {
+                    font-size: 110px;
+                }
+            }
+        }
+    }
+
+    &__btn {
+        @extend %mt-20;
+    }
+}

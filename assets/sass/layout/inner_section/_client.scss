@@ -1,0 +1,31 @@
+@use "../../utilities" as *;
+
+.client {
+    @include padding(120px 0);
+
+
+    &__inner {
+        @extend %text-center, %auto;
+
+        h2 {
+            @extend %font-size-100, %lheight-110;
+        }
+
+        .name {
+            @extend %mt-50;
+
+            p {
+                @extend %flex, %align-items-center, %justify-center;
+
+                span {
+                    @extend %w-60, %h-2, %d-inline-block, %mr-10;
+                    background: #57595C;
+                }
+            }
+        }
+    }
+
+    &__wrapper {
+        @extend %my-60, %bg-repeat;
+    }
+}
